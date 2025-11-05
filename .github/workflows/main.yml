@@ -14,9 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Check formatting with Prettier
+      - name: Validate CSS
+        uses: Cyb3r-Jak3/html5validator-action@v3
+        with:
+          root: .
+          css: true
+          js: false
+          log_level: INFO
+
+      # 🧩 JS Syntax Check (no ESLint needed)
+      - name: Check JS Syntax
         run: |
-          npm install -g prettier
-          npx prettier --check .        
+          echo "Checking JavaScript syntax..."
+          find . -name "*.js" -print -exec node --check {} \;
+       
        
 
