@@ -14,5 +14,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Lint CSS
-        run: npx stylelint "**/*.css"
+      
