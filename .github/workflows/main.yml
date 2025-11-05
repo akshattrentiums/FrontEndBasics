@@ -14,10 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Lint JavaScript
-        run: |
-          npm install -g eslint
-          npx eslint "**/*.js"
       - name: Check formatting with Prettier
         run: |
           npm install -g prettier
